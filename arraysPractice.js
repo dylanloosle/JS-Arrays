@@ -202,10 +202,11 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 
   //Code Here
 var addTen = function(param1) {
+    var newItems = [];
     for(var i = 0; i < param1.length; i++){
-        var newItems = [i] + 10;
+        newItems.push(param1[i] + 10);
     }
-    return param1.push(newItems);
+    return newItems;
 }
 addTen(numbers);
 
