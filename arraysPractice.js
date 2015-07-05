@@ -201,8 +201,13 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 //array after adding ten to each item in numbers. *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 
   //Code Here
-
-
+var addTen = function(param1) {
+    for(var i = 0; i < param1.length; i++){
+        var newItems = [i] + 10;
+    }
+    return param1.push(newItems);
+}
+addTen(numbers);
 
 //Next Problem
 
@@ -222,6 +227,10 @@ for(var i = 0; i < num2; i++){
 //Write a function that is given arr1 and arr2 is it's only arguments. Return the array which is longest.
 
   //Code Here
+var test = function(param1, param2) {
+    return Math.max(param1.length, param2.length);
+};
+test(arr1, arr2);
 
 
 /*As a continuation of the previous problem, write another function called 'both'.
@@ -230,7 +239,19 @@ for(var i = 0; i < num2; i++){
 */
 
   //Code Here
-  
+var both = function(one, two) {
+    var newArray = [];
+    if(one.indexOf(two)) {
+        one.push(newArray);
+    }
+    if else(two.indexOf(one)){
+        two.push(newArray);
+    }
+
+    return newArray;
+}
+both(arr1, arr2);
+
   
   
 
@@ -270,12 +291,22 @@ array with those four objects. After that console.log the length of the Array an
 sure that it's equal to 4. */
 
   //Code Here
+devMountainEmployees.push(tyler, cahlan, ryan, colt);
+console.log(devMountainEmployees.length);
 
 /*Now let's say Cahlan has a mental breakdown and has to take a leave of absense to 'find himself'.
 Loop through your devMountainEmployees until you find cahlan, then remove him from the array.*/
 
   //Code Here
-
+var removeCahlan = function(){
+    for(var i = 0; i < devMountainEmployees.length; i++) {
+        if(devMountainEmployees[i] === cahlan) {
+            devMountainEmployees.splice([i]);
+        }
+    }
+    return devMountainEmployees;
+}
+removeCahlan();
 
 
 
@@ -317,6 +348,7 @@ of Data is to have an Array full of objects. */
 //Create an empty array called users.
 
   //Code Here
+var users = [];
 
 /*Now add three user objects to your users array. Each user object should contain the
 following properties. name, email, password, username.*/
