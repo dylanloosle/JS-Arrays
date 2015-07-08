@@ -63,9 +63,10 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 
   //Code Here
 var evenFinder = function(param) {
-    for(var i = 0; i < nums.length; i++) {
-        if (nums[i] % 2 === 1) {
-            nums.splice(i, 1);
+    for(var i = 0; i < param.length; i++) {
+        if (param[i] % 2 === 1) {
+            param.splice(i, 1);
+            i--;
         }
     }
 };
@@ -111,17 +112,17 @@ var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 
 //Code Here
 var finder = function(param1){
-    for(var i = 0; i < numbers.length; i++){
-        if(numbers[i].indexOf(getRandomArbitrary)) {
+    var random = getRandomArbitrary();
+    console.log('random: ', random);
+    for(var i in nums){
+        if(random === param1[i]) {
             return true;
         }
-        else {
-            return false;
-        }
     }
+    return false;
 
 };
-finder(getRandomArbitrary);
+finder(numbers);
 //Next problem
 
 
@@ -250,12 +251,10 @@ test(arr1, arr2);
   //Code Here
 var both = function(one, two) {
     var newArray = [];
-    if(one.indexOf(two)) {
+    if(one.indexOf(two) >= 0) {
         one.push(newArray);
     }
-    if else(two.indexOf(one)){
-        two.push(newArray);
-    }
+
 
     return newArray;
 }
@@ -309,8 +308,9 @@ Loop through your devMountainEmployees until you find cahlan, then remove him fr
   //Code Here
 var removeCahlan = function(){
     for(var i = 0; i < devMountainEmployees.length; i++) {
-        if(devMountainEmployees[i] === cahlan) {
-            devMountainEmployees.splice([i]);
+        if(devMountainEmployees[i].name === 'cahlan') {
+            devMountainEmployees.splice(i, 1);
+            i--;
         }
     }
     return devMountainEmployees;
@@ -371,6 +371,17 @@ var user1 = {
 }
 
 //Your Code Here
+users.push(user1, {
+    name: 'Dylan Loosle',
+    email: 'dylanloosle@gmail.com',
+    password: 'nono',
+    username: 'dylanloosle'
+},{
+    name: 'Other Guy',
+    email: 'none',
+    password: 'oops',
+    username: 'there'
+});
 
 /*Now you have a very common data structure. Twitter is a good use case.
 It's easy to imagine that your followers list on Twitter is an Array full or objects
@@ -381,6 +392,12 @@ objects until you find Tyler's account (use tylermcginnis33@gmail.com to find hi
 Once you find the particular indice he's located in, delete him from the array.*/
 
   //Code Here
+for(var i = 0; i < user.length; i++) {
+    if (users[i].name === 'Tyler McGinnis')  {
+        users.splice(i, 1);
+        break;
+    }
+}
 
 //The activity we just did is very much how data works in 'the real world'.
 
