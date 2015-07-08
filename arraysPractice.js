@@ -90,10 +90,11 @@ var divider = function(param1, param2, param3){
             odds.push(nums[i]);
         }
     }
-    var first = (evens.join(' '));
-    var second = (odds.join(' '));
+    nums = [evens, odds];
+    return nums;
 
 };
+
 divider(nums, evens, odds);
 
   //Code Here
@@ -117,7 +118,7 @@ var finder = function(param1){
         else {
             return false;
         }
-    };
+    }
 
 };
 finder(getRandomArbitrary);
@@ -204,7 +205,7 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 var addTen = function(param1) {
     var newItems = [];
     for(var i = 0; i < param1.length; i++){
-        newItems.push(param1[i] + 10);
+        newItems.push(parseInt (param1[i]) + 10);
     }
     return newItems;
 }
@@ -229,7 +230,14 @@ for(var i = 0; i < num2; i++){
 
   //Code Here
 var test = function(param1, param2) {
-    return Math.max(param1.length, param2.length);
+    var length1 =  param1.length;
+    var length2 = param2.length;
+    if(length1 > length2){
+        return param1;
+    }
+    else {
+        return param2;
+    }
 };
 test(arr1, arr2);
 
